@@ -1,0 +1,128 @@
+<!doctype html>
+<html lang="en-us">
+
+    <head>
+        <meta charset="UTF-8">
+        <title>
+        Eric's Trivia Game
+        </title>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+        <link rel="stylesheet" type="text/css" href="assets/css/style.css">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    </head>
+
+    <body class = "bg-dark text-white">
+
+        <container class = "container row col-12">
+            <div class = "col-2"></div>
+            <section class = "text-center col-8"> 
+                <h1>Eric's Philosophical Trivia!</h1>
+                <br>
+                <hr>
+                <!-- This is where the timer is tracked -->
+                <section>
+                    <h2> Seconds Remaining: <span id= "timer">45</span></h2>
+                </section>
+                <!-- Answer totalls appear here. -->
+                <section id = "results">
+                    <div> Correct Answers: <span id = "correctAns">0</span> </div>
+                    <div> Incorrect Answers: <span id = "incorrectAns">0</span> </div>
+                    <div> Unanswered: <span id = "unAns">0</span> </div>
+                </section>
+                <br>
+                <hr>
+                <div class = "questions">
+                <!-- Question 1 -->
+                    <section>
+                        <h3>Persistance of Essence</h3>
+                        <p> What is the name of the philosophical concept where any single part of an entity may be replaced
+                            by an exact copy without changing that entity's "essence," and therefore an entire entity may 
+                            be replaced piece by piece without becoming a wholey new entity with a different "Essence."</p>
+                            <input type="radio" id="o1q1" value = "1" class= "m-3" name = "q1">
+                            <label>Archimedes' Screw</label>
+                            <input type="radio" id="o2q1" value = "2" class= "m-3" name = "q1">
+                            <label>The Ship of Theseus</label>
+                            <input type="radio" id="o3q1" value = "3" class= "m-3" name = "q1">
+                            <label>Staff of Hypocrates</label>
+                            <input type="radio" id="o4q1" value = "4" class= "m-3" name = "q1">
+                            <label>Aristotle's Amphora</label>
+                    </section>
+                    <hr>
+
+                    <!-- Question 2 -->
+                    <section>
+                            <h3>Perception as Reality</h3>
+                            <p>Which philosopher created the thought experiment of the "demon," in which the thinker's 
+                                mind has been left intact, however all of their sensory perceptions are controlled by an
+                                external entity. This "demon" controlling the thinker's perceptions by nature controls their
+                                thoughts without direct impact by controlling everything they can percieve, and therefore the context
+                                of their thoughts. 
+                            </p>
+                                <input type="radio" id="o1q2" value = "1" class= "m-3" name = "q2">
+                                <label>John Locke</label>
+                                <input type="radio" id="o2q2" value = "2" class= "m-3" name = "q2">
+                                <label>Thomas Hobbes</label>
+                                <input type="radio" id="o3q2" value = "3" class= "m-3" name = "q2">
+                                <label>Rene Descartes</label>
+                                <input type="radio" id="o4q2" value = "4" class= "m-3" name = "q2">
+                                <label>Asclepius</label>
+                    </section>
+                    <hr>
+
+                    <!-- Question 3 -->
+                    <section>
+                            <H3>The Smallest Part of the Whole</H3>
+                            <p>What scientist-pilosopher both hypotheseid, discovered, and quantified that there must be a smallest
+                                component piece or measurement of energy that constitutes all larger energy formations, 
+                                and that this smallest piece must be discrete and indivisible. 
+                            </p>
+                        <input type="radio" id="o1q3" value = "1" class= "m-3" name = "q3">
+                        <label>Plato</label>
+                        <input type="radio" id="o2q3" value = "2" class= "m-3" name = "q3">
+                        <label>Neils Bohr</label>
+                        <input type="radio" id="o3q3" value = "3" class= "m-3" name = "q3">
+                        <label>Albert Einstein</label>
+                        <input type="radio" id="o4q3" value = "4" class= "m-3" name = "q3">
+                        <label>Max Planck</label>
+                    </section>
+                    <hr>
+
+                    
+                    <!-- Question 4 -->
+                    <section>
+                            <h3>Stoicism</h3>
+                            <p> What was the ultimate goal of the greek stoics, who believed that the character 
+                                of a man was not dictated by that which he had done, nor by how he felt about it, 
+                                but instead by what a man had survived and remained impassionate, reasoned, and 
+                                rational about said events.
+                            </p>
+                            <input type="radio" id="o1q4" value = "1" class= "m-3" name = "q4">
+                            <label>Apatheia</label>
+                            <input type="radio" id="o2q4" value = "2" class= "m-3" name = "q4">
+                            <label>Nous</label>
+                            <input type="radio" id="o3q4" value = "3" class= "m-3" name = "q4">
+                            <label>Phren</label>
+                            <input type="radio" id="o4q4" value = "4" class= "m-3" name = "q4">
+                            <label>Hexis</label>
+                    </section>
+                    <hr>
+                    
+                <!-- Submit button -->
+                <section>
+                    <h3>Submit Your Answers</h3>
+                    <input type="button" id = "submit" value = "submit">
+                </section>
+            </div>
+                
+            
+            </section>
+            
+            <div class = "col-2"></div>
+
+
+        </container>
+
+        <script src="assets/javascript/game.js">
+            
+            
+        </script>
