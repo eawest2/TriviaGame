@@ -11,34 +11,35 @@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     </head>
 
-    <body class = "bg-dark text-white">
+    <body class = "bg-dark text-white panel">
 
         <container class = "container row col-12">
             <div class = "col-2"></div>
-            <section class = "text-center col-8"> 
+            <section class = "text-center col-8 bg-dark" id = "mainPanel"> 
                 <h1>Eric's Philosophical Trivia!</h1>
                 <br>
                 <hr>
                 <!-- This is where the timer is tracked -->
                 <section>
-                    <h2> Seconds Remaining: <span id= "timer">45</span></h2>
+                    <h2> Seconds Remaining: <span class = "text-success" id= "timer">45</span></h2>
                 </section>
                 <!-- Answer totals appear here. -->
-                <section id = "results">
-                    <div> Correct Answers: <span id = "correctAns">0</span> </div>
-                    <div> Incorrect Answers: <span id = "incorrectAns">0</span> </div>
-                    <div> Unanswered: <span id = "unAns">0</span> </div>
-                </section>
-                <!-- Restart button -->
-                <section>
-                        <h3>Restart the quiz!</h3>
-                        <input type="button" id = "restart" value = "restart">
+                <div id= "answerStorage">
+                    <section id = "results">
+                        <div> Correct Answers: <span id = "correctAns">0</span> </div>
+                        <div> Incorrect Answers: <span id = "incorrectAns">0</span> </div>
+                        <div> Unanswered: <span id = "unAns">0</span> </div>
                     </section>
-                <br>
+                    <!-- Restart button -->
+                    <section class = "m-2 border border-white">
+                            <h3>Restart the quiz!</h3>
+                            <input class = "m-2" type="button" id = "restart" value = "restart">
+                        </section>
+                </div>
                 <hr>
-                <div class = "questions">
+                <div id= "questionStorage">
                 <!-- Question 1 -->
-                    <section>
+                    <section class  = "m-2 border">
                         <h3>Persistance of Essence</h3>
                         <p> What is the name of the philosophical concept where any single part of an entity may be replaced
                             by an exact copy without changing that entity's "essence," and therefore an entire entity may 
@@ -55,7 +56,7 @@
                     <hr>
 
                     <!-- Question 2 -->
-                    <section>
+                    <section class  = "m-2 border">
                             <h3>Perception as Reality</h3>
                             <p>Which philosopher created the thought experiment of the "demon," in which the thinker's 
                                 mind has been left intact, however all of their sensory perceptions are controlled by an
@@ -75,7 +76,7 @@
                     <hr>
 
                     <!-- Question 3 -->
-                    <section>
+                    <section class  = "m-2 border">
                             <H3>The Smallest Part of the Whole</H3>
                             <p>What scientist-pilosopher both hypotheseid, discovered, and quantified that there must be a smallest
                                 component piece or measurement of energy that constitutes all larger energy formations, 
@@ -94,7 +95,7 @@
 
                     
                     <!-- Question 4 -->
-                    <section>
+                    <section class  = "m-2 border">
                             <h3>Stoicism</h3>
                             <p> What was the ultimate goal of the greek stoics, who believed that the character 
                                 of a man was not dictated by that which he had done, nor by how he felt about it, 
@@ -113,9 +114,9 @@
                     <hr>
                     
                 <!-- Submit button -->
-                <section>
+                <section class= "m-3 border border-white">
                     <h3>Submit Your Answers!</h3>
-                    <input type="button" id = "submit" value = "submit">
+                    <input class = "m-2" type="button" id = "submit" value = "submit">
                 </section>
             </div>
                 

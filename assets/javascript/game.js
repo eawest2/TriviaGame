@@ -1,6 +1,6 @@
 //Declare Global Variables
     //time tracker
-    var time = 15
+    var time = 45
     //Working answers array
     var currentAnswers = [0,0,0,0]
     //Correct answers array
@@ -16,7 +16,7 @@
 
 //Function Logic
 
-    //reset after time over-
+    //reset after time over
     function reset () {
         //release time timer
         clearInterval(timeClock);
@@ -46,6 +46,9 @@
 
     //Upon press of the start button-
     function start (){
+        document.getElementById("answerStorage").style.visibility = "hidden";
+        document.getElementById("questionStorage").style.visibility = "visible";
+
         timeClock = setInterval(function(){
             time--
             //write displayTime to HTML
@@ -103,6 +106,12 @@
         $("#incorrectAns").html(incorrectNum);
         $("#unAns").html(unansweredNum);
 
+        document.getElementById("answerStorage").style.visibility = "visible";
+        document.getElementById("questionStorage").style.visibility = "hidden";
+
+        $(document).ready(function(){
+            $(this).scrollTop(0);
+        });
         
 
         //set time to 30
