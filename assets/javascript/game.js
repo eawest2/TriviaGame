@@ -4,7 +4,7 @@
     //Working answers array
     var currentAnswers = [0,0,0,0]
     //Correct answers array
-    var correctAnswers = [2,3,4,1]
+    var correctAnswers = ["2","3","4","1"]
     //final answer tracking
     var correctNum = 0
     var incorrectNum = 0
@@ -22,6 +22,8 @@
         clearInterval(timeClock);
         //set time to 45
         time = 45
+        //write time to HTML
+        $("timer").html(time);
         //set currentAnswers to [0,0,0,0]
         currentAnswers = [0,0,0,0]
         //set correctNum = 0
@@ -30,6 +32,11 @@
         incorrectNum = 0
         //set unansweredNum = 0
         unansweredNum = 0
+        //write unanswered, correct, and incorrect nums to HTML.
+        $("#correctAns").html(correctNum);
+        $("#incorrectAns").html(incorrectNum);
+        $("#unAns").html(unansweredNum);
+
         //run start ()
         start();
 
@@ -42,14 +49,13 @@
         timeClock = setInterval(function(){
             time--
             //write displayTime to HTML
-            document.getElementById("timer").innerHTML = time;
-            console.log(currentAnswers)
-        }, 1000);
+            $("#timer").html(time);
+            }, 1000);
 
         //onclick submit, run submit ()
-        //if time = 0, run submit () automatically.
         $("#submit").on("click", submit);
 
+        //if time = 0, run submit () automatically.
         if (time === 0){
             submit ();
         };
@@ -65,16 +71,16 @@
 
         //write answers to currentAnswers
         var ans1 = $('input[name=q1]:checked').val();
-        currentAnswers.splice(0, ans1);
+        currentAnswers.splice(0, 1, ans1);
         // console.log("player ans arr:" + playerAns);
         var ans2 = $('input[name=q2]:checked').val();
-        currentAnswers.splice(1, ans2);
+        currentAnswers.splice(1, 1, ans2);
         // console.log("player ans arr:" + playerAns);
-        var ans3 = $('input[name=q2]:checked').val();
-        currentAnswers.splice(2, ans3);
+        var ans3 = $('input[name=q3]:checked').val();
+        currentAnswers.splice(2, 1, ans3);
         // console.log("player ans arr:" + playerAns);
-        var ans4 = $('input[name=q2]:checked').val();
-        currentAnswers.splice(3, ans4);
+        var ans4 = $('input[name=q4]:checked').val();
+        currentAnswers.splice(3, 1, ans4);
         console.log(currentAnswers);
 
         //check currentAnswers array values with for loop
@@ -93,14 +99,15 @@
             };
         };
         //write unanswered, correct, and incorrect nums to HTML.
-        document.getElementById("correctAns").innerHTML = correctNum;
-        document.getElementById("incorrectAns").innerHTML = incorrectNum;
-        document.getElementById("unAns").innerHTML = unansweredNum;
+        $("#correctAns").html(correctNum);
+        $("#incorrectAns").html(incorrectNum);
+        $("#unAns").html(unansweredNum);
 
         
 
         //set time to 30
             time = 30
+            $("timer").html(time);
             //timer reduce time-- until end. 
             timeClock = setInterval(function(){
                 time--
@@ -110,7 +117,12 @@
 
         //write restart button to HTML
             //onclick, run reset ()
+            $("#restart").on("click", reset);
             //if time = 0, run reset ()
+
+            if (time === 0){
+                reset ();
+            };
         
 
     };
