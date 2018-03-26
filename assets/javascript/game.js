@@ -37,6 +37,8 @@
         $("#incorrectAns").html(incorrectNum);
         $("#unAns").html(unansweredNum);
 
+        //set radio status to false
+
         //run start ()
         start();
 
@@ -46,25 +48,30 @@
 
     //Upon press of the start button-
     function start (){
+
+        //Set visibility
         document.getElementById("answerStorage").style.visibility = "hidden";
         document.getElementById("questionStorage").style.visibility = "visible";
 
         timeClock = setInterval(function(){
-            time--
+            if (time > 0) { time--
             //write displayTime to HTML
             $("#timer").html(time);
-            }, 1000);
+            }
+            else if (time === 0){
+                submit ()
+            };
+        }, 1000);
 
         //onclick submit, run submit ()
         $("#submit").on("click", submit);
 
         //if time = 0, run submit () automatically.
-        if (time === 0){
-            submit ();
+        
         };
 
 
-    };
+    ;
 
     //submit answers for grading-
     function submit () {
@@ -84,8 +91,7 @@
         // console.log("player ans arr:" + playerAns);
         var ans4 = $('input[name=q4]:checked').val();
         currentAnswers.splice(3, 1, ans4);
-        console.log(currentAnswers);
-
+        
         //check currentAnswers array values with for loop
         for (var i = 0; i < correctAnswers.length; i++){
             //if if value of currentAnswers[i] ==== 0, unanswerdNum ++
@@ -119,9 +125,13 @@
             $("timer").html(time);
             //timer reduce time-- until end. 
             timeClock = setInterval(function(){
-                time--
+                if (time > 0) { time--
                 //write displayTime to HTML
-                document.getElementById("timer").innerHTML = time;
+                $("#timer").html(time);
+                }
+                else if (time === 0){
+                    reset ()
+                };
             }, 1000);
 
         //write restart button to HTML
